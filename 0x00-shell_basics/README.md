@@ -1,2 +1,1 @@
-The description will be written after completing the tasks.
-
+script that prints the absolute path name of the current working directory
