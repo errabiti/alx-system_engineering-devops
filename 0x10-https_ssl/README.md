@@ -1,51 +1,36 @@
-0x10. HTTPS SSL
+![img](https://assets.imaginablefutures.com/media/images/ALX_Logo.max-200x150.png)
+  > HTTP SSL
 
-0. World wide web
-mandatory
-Configure your domain zone so that the subdomain www points to your load-balancer IP (lb-01). Let’s also add other subdomains to make our life easier, and write a Bash script that will display information about subdomains.
+![http-ssl](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/276/FlhGPEK.png)
 
-Requirements:
+## About
+In today's digital age, security is of utmost importance, and one of the primary methods of ensuring secure communication over the internet is by using HTTPS and SSL/TLS.
 
-Add the subdomain www to your domain, point it to your lb-01 IP (your domain name might be configured with default subdomains, feel free to remove them)
-Add the subdomain lb-01 to your domain, point it to your lb-01 IP
-Add the subdomain web-01 to your domain, point it to your web-01 IP
-Add the subdomain web-02 to your domain, point it to your web-02 IP
-Your Bash script must accept 2 arguments:
-domain:
-type: string
-what: domain name to audit
-mandatory: yes
-subdomain:
-type: string
-what: specific subdomain to audit
-mandatory: no
-Output: The subdomain [SUB_DOMAIN] is a [RECORD_TYPE] record and points to [DESTINATION]
-When only the parameter domain is provided, display information for its subdomains www, lb-01, web-01 and web-02 - in this specific order
-When passing domain and subdomain parameters, display information for the specified subdomain
-Ignore shellcheck case SC2086
-Must use:
-awk
-at least one Bash function
-You do not need to handle edge cases such as:
-Empty parameters
-Nonexistent domain names
-Nonexistent subdomains
+HTTPS, short for Hypertext Transfer Protocol Secure and is a protocol used to encrypt data that is transmitted over the internet. SSL/TLS, on the other hand, stands for Secure Sockets Layer/Transport Layer Security and is a protocol that provides secure communication over the internet by encrypting data between two communicating parties. Let's have a explore them in this project.
 
-1. HAproxy SSL termination
-mandatory
-“Terminating SSL on HAproxy” means that HAproxy is configured to handle encrypted traffic, unencrypt it and pass it on to its destination.
-
-Create a certificate using certbot and configure HAproxy to accept encrypted traffic for your subdomain www..
-
-Requirements:
-
-HAproxy must be listening on port TCP 443
-HAproxy must be accepting SSL traffic
-HAproxy must serve encrypted traffic that will return the / of your web server
-When querying the root of your domain name, the page returned must contain Holberton School
-Share your HAproxy config as an answer file (/etc/haproxy/haproxy.cfg)
-The file 1-haproxy_ssl_termination must be your HAproxy configuration file
-
-Make sure to install HAproxy 1.5 or higher, SSL termination is not available before v1.5.
+## Background context
+### What happens if you don't secure your website traffic?
+![day-leak](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-sysadmin_devops/276/xCmOCgw.gif)
 
 
+## Resources
+__Read or watch__:
+1. [What is HTTPS](https://www.instantssl.com/http-vs-https)
+2. [What are the 2 main elements that SSL is providing](https://www.sslshopper.com/why-ssl-the-purpose-of-using-ssl-certificates.html)
+3. [HAproxy SSL termination on Ubuntu](https://www.linuxtechi.com/how-to-setup-haproxy-ssl-termination-ubuntu/)
+4. [SSL Termination](https://en.wikipedia.org/wiki/TLS_termination_proxy)
+5. [Bash functions](https://tldp.org/LDP/abs/html/complexfunct.html)
+
+## Man / help
+- awk
+- dig
+
+## Learning objectives
+At the end of this project, you are expected to be able to [explain to anyone](https://fs.blog/feynman-learning-technique/) __Without the help of Google__: 
+
+* [X] What is HTTPS SSL 2 main roles
+* [X] What is the purpose encrypting traffic
+* [X] What SSL termination means
+
+## Quizes
+[Quiz](./quiz.md)
